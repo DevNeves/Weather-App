@@ -32,11 +32,10 @@ const insertWeatherInfoIntoDOM = (LocalizedName, WeatherText, Temperature) => {
   weatherInfoText(temperatureContainer, Temperature.Metric.Value)
 }
 
-const changingTimeImage = IsDayTime => {
+const changingTimeImage = IsDayTime => 
   IsDayTime
     ? timeImageContainer.setAttribute('src', './src/day.svg')
     : timeImageContainer.setAttribute('src', './src/night.svg') 
-}
 
 const changingTimeIcon = WeatherIcon => {
   const icon = `<img src='./src/icons/${WeatherIcon}.svg'></img>`
