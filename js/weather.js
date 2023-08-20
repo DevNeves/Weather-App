@@ -29,8 +29,14 @@ const getCityWeather = async cityName => {
     return
   }
 
-  const weatherUrl = getWeatherUrl(cityData.Key)
-  const [{ WeatherText, Temperature, IsDayTime, WeatherIcon }] = await fetchData(weatherUrl)
-  
-  return { LocalizedName: cityData.LocalizedName, WeatherText, Temperature, IsDayTime, WeatherIcon }
+  const weatherUrl = getWeatherUrl(cityData[0].Key)
+  const [weather] = await fetchData(weatherUrl)
+
+  return { 
+    localizedName: cityData[0].LocalizedName,
+    weatherText: weather.WeatherText,
+    temperature: weather.Temperature.Metric.Value,
+    isDayTime: weather.IsDayTime ,
+    weatherIcon: weather.WeatherIcon  
+  }
 }

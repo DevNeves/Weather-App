@@ -13,11 +13,11 @@ const showCityWeather = async city => {
     return
   }
 
-  cityNameContainer.textContent = cityWeather.LocalizedName
-  weatherDetailContainer.textContent = cityWeather.WeatherText
-  temperatureContainer.textContent = cityWeather.Temperature.Metric.Value
-  timeImageContainer.setAttribute('src', `./src/${cityWeather.IsDayTime ? 'day' : 'night'}.svg`)
-  timeIconContainer.innerHTML = `<img src='./src/icons/${cityWeather.WeatherIcon}.svg'></img>`
+  cityNameContainer.textContent = cityWeather.localizedName
+  weatherDetailContainer.textContent = cityWeather.weatherText
+  temperatureContainer.textContent = cityWeather.temperature
+  timeImageContainer.setAttribute('src', `./src/${cityWeather.isDayTime ? 'day' : 'night'}.svg`)
+  timeIconContainer.innerHTML = `<img src='./src/icons/${cityWeather.weatherIcon}.svg'></img>`
   cityCardContainer.classList.remove('d-none')
   cityNameForm.reset()
 }
