@@ -29,4 +29,3 @@ const getCityWeather = async cityName => {
 
   return { Key, LocalizedName, WeatherText, Temperature, IsDayTime, WeatherIcon }
 }
-
